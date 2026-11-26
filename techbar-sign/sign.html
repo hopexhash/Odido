@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>TechBar Opening Hours</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   @page { size: A4; margin: 0; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -18,16 +18,13 @@
   html, body { background: #fff; }
   body {
     width: 210mm; height: 297mm; margin: 0 auto;
-    font-family: "Plus Jakarta Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+    font-family: "Poppins", "Segoe UI", Helvetica, Arial, sans-serif;
     color: var(--ink);
     -webkit-print-color-adjust: exact; print-color-adjust: exact;
   }
   .page {
     position: relative; width: 210mm; height: 297mm; overflow: hidden;
     padding: 22mm 20mm 18mm; display: flex; flex-direction: column;
-  }
-  .page::before {
-    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5mm; background: var(--grad);
   }
   .blob {
     position: absolute; border-radius: 50%; filter: blur(30px); opacity: .16; z-index: 0;
@@ -74,7 +71,7 @@
     border-top: 1px solid var(--line); padding-top: 8mm;
   }
   .icon {
-    flex: none; width: 17mm; height: 17mm; border-radius: 50%; background: var(--grad);
+    flex: none; width: 17mm; height: 17mm; border-radius: 50%; background: var(--ink);
     display: grid; place-items: center;
   }
   .icon svg { width: 8.5mm; height: 8.5mm; }
