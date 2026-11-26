@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>TechBar Opening Hours</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #14141f;
+    --muted: #5c5c6e;
+    --line: #e6e4ee;
+    --soft: #f6f5fa;
+    --grad: linear-gradient(90deg, #2a63e0 0%, #27b0a4 22%, #d6c04a 40%, #f0862c 58%, #d8336f 78%, #5b4fd6 100%);
+  }
+  html, body { background: #fff; }
+  body {
+    width: 210mm; height: 297mm; margin: 0 auto;
+    font-family: "Plus Jakarta Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .page {
+    position: relative; width: 210mm; height: 297mm; overflow: hidden;
+    padding: 22mm 20mm 18mm; display: flex; flex-direction: column;
+  }
+  .page::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5mm; background: var(--grad);
+  }
+  .blob {
+    position: absolute; border-radius: 50%; filter: blur(30px); opacity: .16; z-index: 0;
+  }
+  .b1 { width: 120mm; height: 120mm; right: -45mm; top: 70mm; background: #5b4fd6; }
+  .b2 { width: 100mm; height: 100mm; left: -45mm; bottom: 20mm; background: #f0862c; }
+  .page > *:not(.blob) { position: relative; z-index: 1; flex: none; }
+
+  .logo { width: 96mm; height: 26.2mm; margin: 2mm auto 0; display: block; flex: none; }
+
+  .title { text-align: center; margin-top: 11mm; }
+  .eyebrow {
+    font-size: 10.5pt; font-weight: 700; letter-spacing: .28em; text-transform: uppercase; color: var(--muted);
+  }
+  h1 { font-size: 52pt; font-weight: 800; letter-spacing: -.03em; line-height: 1; margin-top: 3mm; }
+
+  .hours {
+    margin: 10mm auto 0; width: 100%;
+    background: var(--ink); color: #fff; border-radius: 9mm;
+    padding: 9mm 10mm 9mm; text-align: center; position: relative; overflow: hidden;
+  }
+  .hours::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2.2mm; background: var(--grad);
+  }
+  .days { font-size: 15pt; font-weight: 600; opacity: .85; }
+  .days span { opacity: .55; margin: 0 2.5mm; }
+  .time {
+    font-size: 60pt; font-weight: 800; letter-spacing: -.02em; line-height: 1.05; margin-top: 2mm; white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .time .dash { font-weight: 400; opacity: .5; margin: 0 3mm; }
+
+  .langs { display: grid; grid-template-columns: 1fr 1fr; gap: 7mm; margin-top: 10mm; }
+  .lang { background: var(--soft); border: 1px solid var(--line); border-radius: 6mm; padding: 6mm 6.5mm 6.5mm; }
+  .tag {
+    display: inline-block; font-size: 8.5pt; font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
+    background: #fff; border: 1px solid var(--line); border-radius: 99px; padding: 1.2mm 3.2mm; color: var(--muted);
+  }
+  .lang p { font-size: 11.5pt; line-height: 1.55; margin-top: 4mm; color: #2b2b38; }
+  .lang strong { font-weight: 700; color: var(--ink); }
+
+  .help {
+    margin-top: auto; display: flex; align-items: center; gap: 7mm;
+    border-top: 1px solid var(--line); padding-top: 8mm;
+  }
+  .icon {
+    flex: none; width: 17mm; height: 17mm; border-radius: 50%; background: var(--grad);
+    display: grid; place-items: center;
+  }
+  .icon svg { width: 8.5mm; height: 8.5mm; }
+  .help .label { font-size: 10.5pt; font-weight: 600; color: var(--muted); line-height: 1.45; }
+  .help .phone { font-size: 27pt; font-weight: 800; letter-spacing: -.01em; margin-top: 1mm; white-space: nowrap; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="blob b1"></div><div class="blob b2"></div>
+
+  <svg class="logo" viewBox="0 0 660 180" role="img" aria-label="Odido">
+    <defs>
+      <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#2a4fd8"/><stop offset=".55" stop-color="#2b7fd0"/><stop offset="1" stop-color="#25b3a0"/>
+      </linearGradient>
+      <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#3f8f86"/><stop offset=".5" stop-color="#8faa5c"/><stop offset="1" stop-color="#e3be3f"/>
+      </linearGradient>
+      <linearGradient id="g3" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#f3a03a"/><stop offset="1" stop-color="#ea6a26"/>
+      </linearGradient>
+      <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#ee8a3a"/><stop offset=".55" stop-color="#d9446a"/><stop offset="1" stop-color="#7a3fb8"/>
+      </linearGradient>
+      <radialGradient id="g5" cx=".25" cy=".2" r=".95">
+        <stop offset="0" stop-color="#f0418a"/><stop offset=".45" stop-color="#b746b8"/><stop offset=".8" stop-color="#5a52d8"/><stop offset="1" stop-color="#3d63dc"/>
+      </radialGradient>
+    </defs>
+    <circle cx="80" cy="90" r="80" fill="url(#g1)"/>
+    <path d="M190 10 A80 80 0 0 1 190 170 Z" fill="url(#g2)"/>
+    <rect x="300" y="10" width="60" height="160" fill="url(#g3)"/>
+    <path d="M470 10 A80 80 0 0 0 470 170 Z" fill="url(#g4)"/>
+    <circle cx="580" cy="90" r="80" fill="url(#g5)"/>
+  </svg>
+
+  <div class="title">
+    <div class="eyebrow">Openingstijden · Opening hours</div>
+    <h1>TechBar</h1>
+  </div>
+
+  <div class="hours">
+    <div class="days">Maandag – Vrijdag <span>/</span> Monday – Friday</div>
+    <div class="time">08:00<span class="dash">–</span>18:00</div>
+  </div>
+
+  <div class="langs">
+    <div class="lang">
+      <span class="tag">Nederlands</span>
+      <p>TechBar is geopend van <strong>maandag tot en met vrijdag</strong>, van <strong>08:00 tot 18:00 uur</strong>.</p>
+      <p>Buiten onze openingstijden kunt u voor dringende ondersteuning contact opnemen met de helpdesk.</p>
+    </div>
+    <div class="lang">
+      <span class="tag">English</span>
+      <p>TechBar is open <strong>Monday through Friday</strong>, from <strong>08:00 to 18:00</strong>.</p>
+      <p>If you need assistance outside our opening hours, you can contact the helpdesk.</p>
+    </div>
+  </div>
+
+  <div class="help">
+    <div class="icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+    </div>
+    <div>
+      <div class="label">Helpdesk — buiten openingstijden / outside opening hours</div>
+      <div class="phone">+31 6 1409 5555</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
